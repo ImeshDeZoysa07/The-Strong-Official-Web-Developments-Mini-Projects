@@ -1,0 +1,104 @@
+.body {
+  margin: 0;
+}
+
+.navbar > li > a {
+  text-decoration: none;
+color: black;
+
+
+}
+.navbar > li {
+  list-style-type: none;
+  display: inline;
+ margin-right: 10px;
+
+
+}
+.navbar { 
+}
+.header {
+  display: flex;
+background-color: antiquewhite;
+  padding: 10px 20px;
+	
+}
+.logo {
+  width: 30%;
+}
+.nav {
+  width: 70%;
+}
+
+
+.navbar > li > a:hover {
+  color: red;
+}
+
+
+.home-image {
+  background-image: url(educ.jpg);
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+.home-text > a {
+  text-decoration: none;
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.home-text > a:hover {
+  background-color: rgb(232, 213, 213);
+  color: red;
+}
+
+.content {
+  display: flex;
+}
+
+.col-1 {
+  width: 40%;
+  margin-inline: 15px;
+}
+.col-2 {
+  width: 60%;
+  margin-inline: 15px;
+}
+
+/* mobile */
+@media (max-width: 425px) {
+  .header {
+    display: block;
+  }
+
+  .logo,
+  .nav {
+    width: auto;
+    text-align: center;
+  }
+
+  .home-text {
+    width: auto;
+    right: 20px;
+    left: 20px;
+    top: 60px;
+  }
+
+  .content {
+    display: block;
+  }
+  .col-1,
+  .col-2 {
+    width: auto;
+  }
+
+}
+
+
+
+
