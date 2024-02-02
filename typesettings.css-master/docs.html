@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Documentation | Typesettings.css</title>
+  <link rel="stylesheet" href="src/styles/typesettings.css">
+  <meta name="description" content="How-to's and demos on Typesettings.css features.">
+</head>
+<body>
+  <a href="#content">
+    Skip to content
+  </a>
+  <div data-typesettings="golden">
+    <nav>
+      <ul>
+        <li>
+          <h1>
+            <a href="index.html">Typesettings.css</a> &raquo; <a href="docs.html" aria-current="page" aria-label="Documentation">Docs</a>
+          </h1>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <a href="https://mikemai.net/typesettings/css/typesettings-2.0-min.css" aria-label="Download the Typesettings.css file">Download</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <main id="content">
+      <article>
+        <header>
+          <h1 role="presentation">
+            Documentation
+          </h1>
+          <h2>
+            How to use typesettings.css
+          </h2>
+        </header>
+        <section>
+          <h3>On This Page</h3>
+          <ol>
+            <li>
+              <a href="#get-started">Get Started</a>
+            </li>
+            <li>
+              <a href="#page-structure">Page Structure</a>
+            </li>
+            <li>
+              <a href="#internationalization">Internationalization</a>
+            </li>
+            <li>
+              <a href="#navigation">Navigation</a>
+            </li>
+            <li>
+              <a href="#main-article-content">Main Article Content</a>
+            </li>
+            <li>
+              <a href="#form">Form</a>
+            </li>
+          </ol>
+        </section>
+        <hr>
+        <section aria-labelledby="get-started">
+          <h3 id="get-started">
+            Get Started
+          </h3>
+          <p>
+            Add <code>data-typesettings</code> attribute to the direct child element of the <code>&lt;body&gt;</code>:
+          </p>
+          <pre><code>&lt;body&gt;<br>&nbsp;&nbsp;&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/body&gt;</code></pre>
+        </section>
+        <hr>
+        <section aria-labelledby="page-structure">
+          <h3 id="page-structure">
+            Page Structure
+          </h3>
+          <p>
+            Inside the <code>div[data-typesettings]</code> element, you can divide up the page into main article content and navigation.
+          </p>
+          <pre><code>&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&lt;nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&lt;/nav&gt;<br>&nbsp;&nbsp;&lt;main&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>&nbsp;&nbsp;&lt;/main&gt;<br>&lt;/div&gt;</code></pre>
+          <section aria-labelledby="accessibility">
+            <h4 id="accessibility">
+              Accessibility
+            </h4>
+            <p>
+              Create a skip link for the page by using an <code>&lt;a&gt;</code> element as the direct child of the <code>&lt;body&gt;</code>. Use the same text in the <code>href</code> attribute as the <code>id</code> for the content container.
+            </p>
+            <pre><code>&lt;body&gt;<br>&nbsp;&nbsp;&lt;a href="#content"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Skip to content<br>&nbsp;&nbsp;&lt;/a&gt;<br>&nbsp;&nbsp;&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;main&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;article id="content"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&hellip;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/article&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/main&gt;<br>&nbsp;&nbsp;&lt;/div&gt;<br>&lt;/body&gt;</code></pre>
+            <p>
+              <abbr aria-label="Note">📣</abbr>: <em>Accessibility is important and everyone should write better code to support it. Please reference the <abbr aria-label="Web Content Accessibility Guidelines">WCAG</abbr> for <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">writing proper markup</a>.</em>
+            </p>
+          </section>
+        </section>
+        <hr>
+        <section aria-labelledby="internationalization">
+          <h3 id="internationalization">
+            Internationalization
+          </h3>
+          <p>
+            Typesettings.css has basic internationalization support for all elements.
+          </p>
+          <section aria-labelledby="quotation-marks">
+            <h4 id="quotation-marks">
+              Quotation Marks
+            </h4>
+            <p>
+              Proper quotation marks for English, Japanese, and Chinese (Traditional) are built-in for the <code>&lt;q&gt;</code> element. Appropriate <code>lang</code> attribute is required for each language.
+            </p>
+            <ul>
+              <li>
+                <p>
+                  <q>Primary quotation marks and <q>secondary quotation marks</q>.</q>
+                </p>
+              </li>
+              <li>
+                <p lang="zh-Hant">
+                  <q>引号，标示引用、着重、<q>特别用意</q>的符号。</q>
+                </p>
+              </li>
+              <li>
+                <p lang="ja">
+                  <q>引用符（いんようふ）は、<q>約物の</q>一つ。</q>
+                </p>
+              </li>
+            </ul>
+            <pre><code>&lt;body lang="zh-Hant"&gt;<br>&nbsp;&nbsp;&lt;q&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;引号，标示引用、着重、&lt;q&gt;特别用意&lt;/q&gt;的符号。<br>&nbsp;&nbsp;&lt;/q&gt;<br>&lt;/body&gt;</code></pre>
+            <p>
+              <abbr aria-label="Note">📣</abbr>: <em>Want more languages supported? <a href="https://github.com/mikemai2awesome/typesettings.css/issues">Submit a request here &raquo;</a></em>
+            </p>
+          </section>
+          <section aria-labelledby="rtl">
+            <h4 id="rtl">
+              Right to Left
+            </h4>
+            <p>
+              Right to left writing mode is supported in all elements. To create a page that reads right to left, add the <code>dir="rtl"</code> attribute to the <code>&lt;html&gt;</code> element.
+            </p>
+            <pre><code>&lt;html dir="rtl"&gt;<br>&nbsp;&nbsp;&hellip;<br>&lt;/html&gt;</code></pre>
+          </section>
+          <section aria-labelledby="vertical">
+            <h4 id="vertical">
+              Vertical Writing Mode
+            </h4>
+            <p>
+              Vertical writing mode for Japanese and Chinese (Traditional) is also supported, see <a href="customize.html">Customize</a> page to find out how to turn on the unique feature.
+            </p>
+          </section>
+        </section>
+        <hr>
+        <section aria-labelledby="navigation">
+          <h3 id="navigation">
+            Navigation
+          </h3>
+          <p>
+            A sticky top navigation menu can be added to a page by using a <code>&lt;nav&gt;</code> element as a direct child of the <code>div[data-typesettings]</code> element.
+          </p>
+          <h4>
+            Demo
+          </h4>
+          <nav>
+            <ul>
+              <li>
+                <h1>
+                  <a href="javascript:">
+                    Title
+                  </a>
+                </h1>
+              </li>
+              <li>
+                <ul>
+                  <li>
+                    <a href="javascript:">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="javascript:">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="javascript:">Primary Action</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <h4>
+            Code Snippet
+          </h4>
+          <pre><code>&lt;div data-typesettings&gt;<br>&nbsp;&nbsp;&lt;nav&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;h1&gt;&lt;a href="[url]"&gt;Title&lt;/a&gt;&lt;/h1&gt;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="[url]"&gt;Link 1&lt;/a&gt;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="[url]"&gt;Link 2&lt;/a&gt;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="[url]"&gt;Primary Action&lt;/a&gt;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>&nbsp;&nbsp;&lt;/nav&gt;<br>&lt;/div&gt;</code></pre>
+          <p>
+            <abbr aria-label="Note">📣</abbr>: <em>If a <code>&lt;nav&gt;</code> element is not a direct child of the <code>div[data-typesettings]</code> element, it will not be sticky.</em>
+          </p>
+        </section>
+        <hr>
+        <section aria-labelledby="main-article-content">
+          <h3 id="main-article-content">
+            Main Article Content
+          </h3>
+          <p>
+            Within the <code>&lt;article&gt;</code> element, you can construct your article using a combination of special elements and common elements.
+          </p>
+          <section aria-labelledby="banner">
+            <details>
+              <summary>
+                <h4 id="banner">
+                  Banner
+                </h4>
+              </summary>
+              <p>
+                If you want to enable a banner, create a <code>&lt;header&gt;</code> element with the attribute <code>role="banner"</code>. Banner bleeds out of the article content&rsquo;s max-width and colors are inverted.
+              </p>
+              <h5>
+                Demo
+              </h5>
+              <header role="banner">
+                <h1>
+                  Banner Heading
+                </h1>
+                <h2>
+                  Banner Subheading
+                </h2>
+              </header>
+              <h5>
+                Code Snippet
+              </h5>
+              <pre><code>&lt;header role="banner"&gt;<br>&nbsp;&nbsp;&hellip;<br>&lt;/header&gt;</code></pre>
+            </details>
+          </section>
+          <section aria-labelledby="drop-cap">
+            <details>
+              <summary>
+                <h4 id="drop-cap">
+                  Drop Cap
+                </h4>
+              </summary>
+              <p>
+                You can activate drop cap by using a <code>&lt;p&gt;</code> element inside the banner. This only applies to the first <code>&lt;p&gt;</code> element.
+              </p>
+              <h5>
+                Demo
+              </h5>
+              <header role="banner">
+                <p>
+                  Science gives man knowledge, which is power; religion gives man wisdom, which is control. Science deals mainly with facts; religion deals mainly with values.
+                </p>
+              </header>
+              <h5>
+                Code Snippet
+              </h5>
+              <pre><code>&lt;header role="banner"&gt;<br>&nbsp;&nbsp;&lt;p&gt;&hellip;&lt;/p&gt;<br>&lt;/header&gt;</code></pre>
+              <p>
+                <abbr aria-label="Note">📣</abbr>: <em>Drop Cap is only available above 400px viewport.</em>
+              </p>
+            </details>
+          </section>
+          <section aria-labelledby="abbreviation">
+            <details>
+              <summary>
+                <h4 id="abbreviation">
+                  Abbreviation
+                </h4>
+              </summary>
+              <p>
+                You can create a tooltip for words that are abbreviations by using the <code>&lt;abbr&gt;</code> element.
+              </p>
+              <h5>
+                Demo
+              </h5>
+              <p>
+                <abbr aria-label="User Experience">UX</abbr>
+              </p>
+              <h5>
+                Code Snippet
+              </h5>
+              <pre><code>&lt;abbr aria-label="User Experience"&gt;<br>&nbsp;&nbsp;UX<br>&lt;/abbr&gt;</code></pre>
+              <p>
+                <abbr aria-label="Note">📣</abbr>: <em>Make sure to use the <code>aria-label</code> attribute, not the <code>title</code> attribute.</em>
+              </p>
+            </details>
+          </section>
+          <section aria-labelledby="summary-heading">
+            <details>
+              <summary>
+                <h4 id="summary-heading">
+                  Summary Heading
+                </h4>
+              </summary>
+              <p>
+                By combining the <code>&lt;details&gt;</code>, <code>&lt;summary&gt;</code>, and <code>&lt;h2&gt;</code> ~ <code>&lt;h6&gt;</code> elements, you can create summary heading that toggles additional information. The heading must be the actual summary of the detailed text.
+              </p>
+              <h5>
+                Demo
+              </h5>
+              <details>
+                <summary><h2>H2 summary heading text</h2></summary>
+                <p>This is the full details. Every man lives in two realms: the internal and the external. The internal is that realm of spiritual ends expressed in art, literature, morals, and religion. The external is that complex of devices, techniques, mechanisms, and instrumentalities by means of which we live.</p>
+              </details>
+              <details>
+                <summary><h3>H3 summary heading text</h3></summary>
+                <p>This is the full details. Every man lives in two realms: the internal and the external. The internal is that realm of spiritual ends expressed in art, literature, morals, and religion. The external is that complex of devices, techniques, mechanisms, and instrumentalities by means of which we live.</p>
+              </details>
+              <details>
+                <summary><h4>H4 summary heading text</h4></summary>
+                <p>This is the full details. Every man lives in two realms: the internal and the external. The internal is that realm of spiritual ends expressed in art, literature, morals, and religion. The external is that complex of devices, techniques, mechanisms, and instrumentalities by means of which we live.</p>
+              </details>
+              <details>
+                <summary><h5>H5 summary heading text</h5></summary>
+                <p>This is the full details. Every man lives in two realms: the internal and the external. The internal is that realm of spiritual ends expressed in art, literature, morals, and religion. The external is that complex of devices, techniques, mechanisms, and instrumentalities by means of which we live.</p>
+              </details>
+              <details>
+                <summary><h6>H6 summary heading text</h6></summary>
+                <p>This is the full details. Every man lives in two realms: the internal and the external. The internal is that realm of spiritual ends expressed in art, literature, morals, and religion. The external is that complex of devices, techniques, mechanisms, and instrumentalities by means of which we live.</p>
+              </details>
+              <h5>
+                Code Snippet
+              </h5>
+              <pre><code>&lt;details&gt;<br>&nbsp;&nbsp;&lt;summary&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h6&gt;&hellip;&lt;/h6&gt;<br>&nbsp;&nbsp;&lt;/summary&gt;<br>&nbsp;&nbsp;&lt;p&gt;&hellip;&lt;/p&gt;<br>&lt;/details&gt;</code></pre>
+              <p>
+                <abbr aria-label="Note">📣</abbr>: <em><code>&lt;h1&gt;</code> is not recommended for this because it is only meant for page heading.</em>
+              </p>
+            </details>
+          </section>
+          <section aria-labelledby="common-elements">
+            <details>
+              <summary>
+                <h4 id="common-elements">
+                  Common Elements
+                </h4>
+              </summary>
+              <p>
+                Common elements can be used as is with no conditions attached.
+              </p>
+              <h5>
+                Demo
+              </h5>
+              <p>
+                Text: <strong>bold</strong>, <em>italic</em>, <a href="javascript:">linked</a>, <code>code</code>, <kbd>kbd</kbd>, <small>small</small>.
+              </p>
+              <p>
+                Paragraphs. The ultimate measure of a man is not where he stands in moments of comfort and convenience, but where he stands at times of challenge and controversy.
+              </p>
+              <aside>
+                <p>
+                  Aside content.
+                </p>
+              </aside>
+              <p>
+                The function of education is to teach one to think intensively and to think critically. Intelligence plus character&mdash;that is the goal of true education.
+              </p>
+              <p>
+                In the end, we will remember not the words of our enemies, but the silence of our friends.
+              </p>
+              <details>
+                <summary>Summary sums up the details</summary>
+                <p>
+                  Details elaborate on the summary.
+                </p>
+              </details>
+              <ul>
+                <li>
+                  First level unordered item
+                </li>
+                <li>
+                  First level unordered item
+                  <ol>
+                    <li>
+                      Second level ordered item
+                      <ul>
+                        <li>
+                          Third level unordered item
+                        </li>
+                        <li>
+                          Third level unordered item
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Second level ordered item
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  First level unordered item
+                </li>
+              </ul>
+              <ol>
+                <li>
+                  First level ordered item
+                </li>
+                <li>
+                  First level ordered item
+                  <ul>
+                    <li>
+                      Second level unordered item
+                      <ol>
+                        <li>
+                          Third level ordered item
+                        </li>
+                        <li>
+                          Third level ordered item
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      Second level unordered item
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  First level ordered item
+                </li>
+              </ol>
+              <dl>
+                <dt>Definition list</dt>
+                <dd>A list of text and description.</dd>
+                <dt>Morgawr</dt>
+                <dd>A sea serpent.</dd>
+                <dt>Owlman</dt>
+                <dd>A giant owl-like creature.</dd>
+              </dl>
+              <pre><code>pre&nbsp;{<br>&nbsp;&nbsp;padding: .5em 1em; color: black; border-left: 5px solid; background-color: white;<br>}</code></pre>
+              <blockquote>
+                <p>
+                  <q>Pull Quote. Darkness cannot drive out darkness; only <q>light</q> can do that. Hate cannot drive out hate; only <q>love</q> can do that.</q>
+                </p>
+                <p>
+                  <q>The time is always right to do what is right.</q>
+                </p>
+              </blockquote>
+              <header>
+                <h1>
+                  Article heading text
+                </h1>
+                <h2>
+                  Article subheading text
+                </h2>
+              </header>
+              <h2>
+                H2 heading text
+              </h2>
+              <h3>
+                H3 heading text
+              </h3>
+              <h4>
+                H4 heading text
+              </h4>
+              <h5>
+                H5 heading text
+              </h5>
+              <h6>
+                H6 heading text
+              </h6>
+              <figure>
+                <img src="https://via.placeholder.com/1600x900" width=1600 height=900 alt="Image description">
+                <figcaption>
+                  Figure caption (image)
+                </figcaption>
+              </figure>
+              <figure>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Col1</th>
+                      <th>Col2</th>
+                      <th>Col3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Row1</td>
+                      <td>Row1</td>
+                      <td>Row1</td>
+                    </tr>
+                    <tr>
+                      <td>Row2</td>
+                      <td>Row2</td>
+                      <td>Row2</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <figcaption>Figure caption (table)</figcaption>
+              </figure>
+            </details>
+          </section>
+        </section>
+        <hr>
+        <section aria-labelledby="form">
+          <h3 id="form">
+            Form
+          </h3>
+          <p>
+            You can create a form by using a combination of <code>&lt;form&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;input&gt;</code> and <code>&lt;button&gt;</code> elements. Form can be used anywhere within the <code>div[data-typesettings]</code> element.
+          </p>
+          <h4>Demo</h4>
+          <form action="submit">
+            <fieldset>
+              <legend>This is a fieldset</legend>
+              <ol>
+                <li>
+                  <label>
+                    Textarea
+                    <textarea name="textarea" rows="5" placeholder="Enter a paragraph"></textarea>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    Input
+                    <input type="text" placeholder="Enter text">
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    Select
+                    <select name="select" id="select"><optgroup><option value="Select" disabled selected>Select</option><option value="Option 1">Option 1</option></optgroup></select>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>This is another fieldset</legend>
+              <ol>
+                <li>
+                  <label>
+                    <input type="radio" name="radio">
+                    This is a radio input.
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="radio" name="radio">
+                    This is a radio input.
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>This is yet another fieldset</legend>
+              <ul>
+                <li>
+                  <label>
+                    <input type="checkbox" name="checkbox">
+                    This is a checkbox input.
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" name="checkbox">
+                    This is a checkbox input.
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+            <p>
+              <input name="file-upload" type="file">
+            </p>
+            <p>
+              <button>Button</button>
+            </p>
+          </form>
+          <h4>
+            Code Snippet
+          </h4>
+          <pre><code>&lt;form action="submit"&gt;<br>&nbsp;&nbsp;&lt;fieldset&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;This is a fieldset&lt;/legend&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ol&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Textarea<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea name="textarea" rows=5 placeholder="Enter a paragraph"&gt;&lt;/textarea&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Input<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" placeholder="Enter text"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;select name="select" id="select"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;optgroup&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="Select" disabled selected&gt;Select&lt;/option&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option value="Option 1"&gt;Option 1&lt;/option&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/optgroup&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;<br>&nbsp;&nbsp;&lt;/fieldset&gt;<br>&nbsp;&nbsp;&lt;fieldset&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;This is another fieldset&lt;/legend&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ol&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="radio"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a radio input.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="radio"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a radio input.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;<br>&nbsp;&nbsp;&lt;/fieldset&gt;<br>&nbsp;&nbsp;&lt;fieldset&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;This is yet another fieldset&lt;/legend&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" name="checkbox"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a checkbox input.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" name="checkbox"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a checkbox input.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ol&gt;<br>&nbsp;&nbsp;&lt;/fieldset&gt;<br>&nbsp;&nbsp;&lt;p&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input name="file-upload" type="file"&gt;<br>&nbsp;&nbsp;&lt;/p&gt;<br>&nbsp;&nbsp;&lt;p&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&gt;Button&lt;/button&gt;<br>&nbsp;&nbsp;&lt;/p&gt;<br>&lt;/form&gt;</code></pre>
+        </section>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
