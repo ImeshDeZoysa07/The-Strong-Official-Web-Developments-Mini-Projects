@@ -1,0 +1,40 @@
+.Menu {
+    position: fixed;
+    top: 100px;
+
+    background-color: #0f89fa;
+    border-radius: 5vw;
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+
+    margin-left: 60vw;
+    margin-right: 20vw;
+    margin-top: 0vw;
+}
+
+.Home {
+    grid-area: title;
+}
+
+.Portfolio {
+    grid-area: content;
+}
+
+.PortfolioGrid {
+    grid-template-areas: "column1 column2";
+    grid-area: column1;
+}
+
+.About {
+    grid-area: about;
+}
+
+.Footer {
+    position: fixed;
+    bottom: 1px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
