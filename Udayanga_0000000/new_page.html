@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Page</title>
+</head>
+<body>
+  <div class="image-container">
+    <img id="" src="D:\Udayanga_0000000\images" alt="Loaded Image">
+  </div>
+  <script>
+    // Retrieve image URL from sessionStorage
+    var imageUrl = sessionStorage.getItem('imageUrl');
+    if (imageUrl) {
+      // Set image source
+      document.getElementById('loadedImage').src = imageUrl;
+    } else {
+      alert('No image URL found');
+    }
+  </script>
+</body>
+</html>
